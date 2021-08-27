@@ -1,5 +1,7 @@
+# A deployment starts from a trigger, that run jobs composed of individual steps.
 name: Azure Static Web Apps CI/CD
 
+# Trigger the workflow on push or pull request for certain types, but only for the main branch
 on:
   push:
     branches:
@@ -10,9 +12,12 @@ on:
       - main
 
 jobs:
+  # Executes when you push commits or open a pull request against the branch listed in the on property.
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
+    # Checks out the repository in the GitHub Action's environment.
+    # Builds and deploys the repository to Azure Static Web Apps.
     name: Build and Deploy Job
     steps:
       - uses: actions/checkout@v2
@@ -31,11 +36,13 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-
+ 
+  # Executes ONLY when you close a pull request that removes the staging environment created from pull requests.
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
     name: Close Pull Request Job
+    # Notifies Azure Static Web Apps that a pull request has closed.
     steps:
       - name: Close Pull Request
         id: closepullrequest
