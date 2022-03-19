@@ -1,0 +1,72 @@
+---
+title: "A Fool with a Tool is still a Fool"
+date: 2022-03-19
+slug: "/null-hypotheses-significance-testing"
+tags:
+  - Statistic
+  - Probability
+  - Logic
+---
+
+## Introduction
+
+The author discovered a paper with the illustrious title "The Earth Is Round (p < .05)" [[1](http://dx.doi.org/10.1037/0003-066x.49.12.997)] written by Jacob Cohen, freely available via [web search](https://web.archive.org/web/20120120054945/http://www.ics.uci.edu/~sternh/courses/210/cohen94_pval.pdf) while researching another topic. The enigmatic title prompted research to clarify what this theme is about.
+
+Every scholar learns about the null hypotheses significance testing (NHST). NHST is widely used as a statistical method in qualitative research, thus it is applied in many areas of science. Despite its frequent use, it is often misinterpreted. Therefore, it is important to study this method and its limitations in order to classify the results obtained with it.  
+
+## Methodology
+
+To answer the questions, a rudimentary literature review was conducted.
+
+## Result
+
+Cohen describes NHST and its problems, which can be broadly divided into two fields:
+
+### Interpretation of the result
+
+First, the interpretation of the result. Instead of providing answer to the question "Given these data, what is the probability that the null hypothesis (H0) is true.", it gives an answer to the question "Given that the null hypothesis (H0) is true, what is the probability of these data?". P(data|H0 true) versus P(H0 true), these two are not the same. 
+
+However, in general, the probability of the alternative hypothesis (HA), P(HA true) is of interest. NHST cannot provide an answer to this question. As explained by Ovens in his assessment of Cohens paper in [[3](https://www.yourstatsguru.com/epar/rp-reviewed/cohen1994/)]: 
+
+> This does not mean that NHST is faulty, but that it is not designed to provide that probability.
+
+### Inappropriate combination of probabilistic and logic 
+
+Second, the idea of NHST is based on a kind of proof by contradiction. In contrast to proof by contradiction, where the rules of logic apply and assertions are either 100% true or 100% false, NHST works with probabilities. While a formal mathematical proof leads to an unambiguous conclusion, the result of NHST is still fraught with uncertainty.  
+
+The inappropriate combination of probabilistic ideas with proof by contradiction can lead to misleading results. The following error is made frequently. If H0 is rejected, then this invalid theory is established: 
+
+If A then B; B therefore A. 
+
+This is in violation of the rules of elementary logic, correctly it reads: 
+
+If A then B; not B therefore not A. 
+
+According to Cohen the following saying is attributed to Morris Raphael Cohen. Note, that they are two different persons, they share the same name by accident.
+
+> All logic texts are divided into two parts. In the first part, on deductive logic, the fallacies are explained; in the second part on inductive logic, they are committed.
+
+## Discusion
+
+Schimamack states in [[2](https://replicationindex.com/2019/01/09/the-earth-is-flat/)] that Cohens criticism regarding NHST is too harsh, and that Cohen focused on the wrong problem. According to Schimamack the focus should not be on the issue of:
+
+> Producing a significant result that merely confirms something that is already known or, worse, the statistical test provides no support for a correct hypothesis and the data are discarded (The Earth is Round, p > .05). This ritual brings no real gain in information. 
+
+Rather it should be on the issue of supporting false claims:
+
+> The real problem with NHST is not that obviously true hypotheses are published with significant p-values. The real problem is that many false claims are published with the claim p < .05. 
+
+## Conclusion
+
+The resulting conclusion, both of Cohens paper and of the NHST method itself, is ambiguous. When used correctly, NHST is beneficial; when used incorrectly or misunderstood, NHST is harmful. You must know your tools in order to use them properly.
+
+### References
+
+[[1](http://dx.doi.org/10.1037/0003-066x.49.12.997)] Cohen, J. (1994). The Earth Is Round (p < .05). American Psychologist, 49(12), 997-1003. 
+
+[[2](https://replicationindex.com/2019/01/09/the-earth-is-flat/)] Schimamack, U. “Cohen (1994) The Earth Is Round (p < .05)” Retrieved from ReplicationIndex.
+
+[[3](https://www.yourstatsguru.com/epar/rp-reviewed/cohen1994/)] Ovens, M. “Cohen (1994) The Earth Is Round (p < .05)” Retrieved from YourStatsGuru.
+
+
+
